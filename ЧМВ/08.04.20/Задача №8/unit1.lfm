@@ -1,0 +1,138 @@
+object Main: TMain
+  Left = 453
+  Height = 347
+  Top = 246
+  Width = 438
+  Caption = 'Периметр правильного n-угольника'
+  ClientHeight = 327
+  ClientWidth = 438
+  Menu = MainMenu1
+  LCLVersion = '2.0.10.0'
+  object angle_input: TEdit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = result_button
+    Left = 135
+    Height = 23
+    Top = 5
+    Width = 80
+    Anchors = [akTop, akRight]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 20
+    TabOrder = 0
+    Text = '6'
+  end
+  object rad_input: TEdit
+    AnchorSideLeft.Control = angle_input
+    AnchorSideTop.Control = angle_input
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = angle_input
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = result_button
+    AnchorSideBottom.Side = asrBottom
+    Left = 135
+    Height = 23
+    Top = 45
+    Width = 80
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Top = 10
+    OnChange = rad_inputChange
+    TabOrder = 1
+    Text = '15'
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = angle_input
+    AnchorSideTop.Side = asrCenter
+    Left = 5
+    Height = 15
+    Top = 9
+    Width = 73
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    Caption = 'Кол-во углов'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = rad_input
+    AnchorSideTop.Side = asrCenter
+    Left = 5
+    Height = 30
+    Top = 41
+    Width = 104
+    BorderSpacing.Left = 5
+    Caption = 'Радиус вписанной '#13#10'окружности'
+    ParentColor = False
+  end
+  object result_memo: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = result_button
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 5
+    Height = 249
+    Top = 73
+    Width = 428
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
+    TabOrder = 2
+  end
+  object result_button: TButton
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 235
+    Height = 63
+    Top = 5
+    Width = 198
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    Caption = 'Результат'
+    OnClick = result_buttonClick
+    TabOrder = 3
+  end
+  object MainMenu1: TMainMenu
+    Left = 151
+    Top = 160
+    object MenuItem1: TMenuItem
+      Caption = 'Файл'
+      object MenuItem2: TMenuItem
+        Caption = 'Открыть'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Сохранить отчет'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Справка'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuItem6Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 257
+    Top = 148
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 160
+    Top = 259
+  end
+end

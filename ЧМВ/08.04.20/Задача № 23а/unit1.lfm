@@ -1,0 +1,158 @@
+object Main: TMain
+  Left = 581
+  Height = 500
+  Top = 213
+  Width = 401
+  Caption = 'Длина высоты треугольника'
+  ClientHeight = 480
+  ClientWidth = 401
+  Menu = MainMenu1
+  LCLVersion = '2.0.10.0'
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = a_side
+    AnchorSideTop.Side = asrCenter
+    Left = 5
+    Height = 15
+    Top = 9
+    Width = 56
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    Caption = 'Сторона a'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = b_side
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = b_side
+    AnchorSideRight.Side = asrBottom
+    Left = 5
+    Height = 15
+    Top = 37
+    Width = 57
+    Caption = 'Сторона b'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Label2
+    AnchorSideTop.Control = c_side
+    AnchorSideTop.Side = asrCenter
+    Left = 5
+    Height = 15
+    Top = 65
+    Width = 56
+    Caption = 'Сторона c'
+    ParentColor = False
+  end
+  object a_side: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    Left = 81
+    Height = 23
+    Top = 5
+    Width = 80
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 5
+    TabOrder = 0
+    Text = '14'
+  end
+  object b_side: TEdit
+    AnchorSideLeft.Control = a_side
+    AnchorSideTop.Control = a_side
+    AnchorSideTop.Side = asrBottom
+    Left = 81
+    Height = 23
+    Top = 33
+    Width = 80
+    BorderSpacing.Top = 5
+    TabOrder = 1
+    Text = '15'
+  end
+  object c_side: TEdit
+    AnchorSideLeft.Control = b_side
+    AnchorSideTop.Control = b_side
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = res_memo
+    Left = 81
+    Height = 23
+    Top = 61
+    Width = 80
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Top = 5
+    BorderSpacing.Bottom = 20
+    TabOrder = 2
+    Text = '13'
+  end
+  object res_button: TButton
+    AnchorSideLeft.Control = a_side
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = res_memo
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = res_memo
+    Left = 181
+    Height = 79
+    Top = 5
+    Width = 215
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 5
+    BorderSpacing.Bottom = 20
+    Caption = 'Результат'
+    OnClick = res_buttonClick
+    TabOrder = 3
+  end
+  object res_memo: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 5
+    Height = 371
+    Top = 104
+    Width = 391
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
+    TabOrder = 4
+  end
+  object MainMenu1: TMainMenu
+    Left = 176
+    Top = 288
+    object MenuItem1: TMenuItem
+      Caption = 'Файл'
+      object MenuItem2: TMenuItem
+        Caption = 'Открыть'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Сохранить отчет'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Справка'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuItem6Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 176
+    Top = 240
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 176
+    Top = 366
+  end
+end
